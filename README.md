@@ -19,15 +19,14 @@ For a **pre-compiled** release of these apps in a Ubuntu Docker image, visit htt
 ----------------------------------------------------------------
 
 
-### Cloning codes
-
-----------------------------------------------------------------
+### Downloading all codes
 
 To **clone all modules at once**, which can be time-consuming to compile, run:
 
-`git clone --recurse-submodules https://github.com:aliraeini/porescale.git`
+`git clone --recurse-submodules https://github.com/aliraeini/porescale.git`
 
-----------------------------------------------------------------
+
+### Downloading specific modules
 
 To pick only the submodules you need, first **clone this repository:**
 
