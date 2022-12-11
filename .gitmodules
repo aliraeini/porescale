@@ -1,37 +1,48 @@
 [submodule "src/script"]
 	path = src/script
-	url = git@github.com:aliraeini/script.git
+	url = https://github.com/aliraeini/script.git
+	shallow = true
 [submodule "src/include"]
 	path = src/include
-	url = git@github.com:aliraeini/sirun.git
+	url = https://github.com/aliraeini/sirun.git
+	shallow = true
 [submodule "pkgs/libtiff"]
 	path = pkgs/libtiff
-	url = git@github.com:aliraeini/libtiff.git
+	url = https://github.com/aliraeini/libtiff.git
+	shallow = true
 [submodule "pkgs/zlib"]
 	path = pkgs/zlib
-	url = git@github.com:aliraeini/zlib.git
+	url = https://github.com/aliraeini/zlib.git
+	shallow = true
 [submodule "src/libvoxel"]
 	path = src/libvoxel
-	url = git@github.com:aliraeini/libvoxel.git
+	url = https://github.com/aliraeini/libvoxel.git
+	shallow = true
 [submodule "pkgs/hypre"]
 	path = pkgs/hypre
-	url = git@github.com:aliraeini/hypre.git
+	url = https://github.com/aliraeini/hypre.git
+	shallow = true
 [submodule "src/pnm"]
 	path = src/pnm
-	url = git@github.com:ImperialCollegeLondon/pnflow.git
+	url = https://github.com/ImperialCollegeLondon/pnflow.git
+	shallow = true
 	branch = main
 [submodule "pkgs/foamx4m"]
 	path = pkgs/foamx4m
-	url = git@github.com:aliraeini/foamxm.git
+	url = https://github.com/aliraeini/foamxm.git
+	shallow = true
 [submodule "src/porefoam1f"]
 	path = src/porefoam1f
-	url = git@github.com:ImperialCollegeLondon/poreFoam-singlePhase.git
+	url = https://github.com/ImperialCollegeLondon/poreFoam-singlePhase.git
 	branch = main
+	shallow = true
 [submodule "src/porefoam2f"]
 	path = src/porefoam2f
-	url = git@github.com:ImperialCollegeLondon/porefoam.git
+	url = https://github.com/ImperialCollegeLondon/porefoam.git
 	branch = main
+	shallow = true
 [submodule "src/ContAngle"]
 	path = src/ContAngle
-	url = git@github.com:ImperialCollegeLondon/ContactAngle.git
+	url = https://github.com/ImperialCollegeLondon/ContactAngle.git
 	branch = main
+	shallow = true
