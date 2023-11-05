@@ -14,9 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install prerequisites
+      run: sudo apt update && sudo apt -y install mpi-default-dev flex libscotch-dev
+
     - name: Update submodules
       run: git submodule update --init --recursive
-      
+
     - name: Build
       run: make all
 
