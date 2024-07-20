@@ -1,3 +1,7 @@
+
+> [!WARNING]  
+> This repo is for historical reference, checkout https://github.com/ImperialCollegeLondon/porescale instead.
+
 ## Pore-scale modules for code developers
 
 This repository serves as developer guide for integrating different git codes/submodules linked here and contains no code of its own.
@@ -88,5 +92,3 @@ To test the compilation run `make test`.
 ### Contact and References ###
 
 For contacts and references please see the individual modules README files or submit your issue in their Github repository.
-
-You can also [report here any issues](https://github.com/aliraeini/porescale/issues) you find and mention *@aliraeini* to get me notified, or directly contact me by email: [a.q.raeini@gmail.com](mainto:a.q.raeini@gmail.com).
