@@ -1,0 +1,8 @@
+
+build/
+test/
+
+bin/
+include/
+lib/
+share/
