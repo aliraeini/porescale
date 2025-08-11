@@ -1,70 +1,67 @@
+## Pore-scale modules
 
-> [!WARNING]  
-> This repo is for historical reference, checkout https://github.com/ImperialCollegeLondon/porescale instead.
+This repository serves as a guide for updating
+**direct simulation**, **contact angle** calculation and **pore network modelling** software,
+originally developed at Imperial College
+[Pore-Scale Consortium](https://www.imperial.ac.uk/earth-science/research/research-groups/pore-scale-modelling/).
 
-## Pore-scale modules for code developers
-
-This repository serves as developer guide for integrating different git codes/submodules linked here and contains no code of its own.
-
-
-If you were looking for **stand-alone** versions of these apps, click on their directories above and then switch to their `master` branch:
-
-- Network extraction: [pnextract](https://github.com/ImperialCollegeLondon/pnextract)
-- Network extraction and flow simulation: [pnflow](https://github.com/ImperialCollegeLondon/pnflow)
-- Direct simulation of single-phase flow on 3D images: [poreFoam-singlePhase](https://github.com/ImperialCollegeLondon/poreFoam-singlePhase)
-- Direct simulation of two-phase flow on 3D images: [poreFoam](https://github.com/ImperialCollegeLondon/poreFoam)
-- Contact angle from 3D (X-ray/micro-CT) images: [ContactAngle](https://github.com/ImperialCollegeLondon/ContactAngle)
+It is **only a shell repository** for its git [submodules](./src/)
 
 
+> [!WARNING]
+> Diverged **upstream repository:  https://github.com/ImperialCollegeLondon/porescale**
+>
+> **This repository**:
+> - lacks new submodules added to the [upstream](https://github.com/ImperialCollegeLondon/porescale/) since summer 2021,
+> - some [submodules](./src) link to forked repositories:
+>     - new changes are mostly related to build and test scripts, and a few bug fixes.
 
-For a **pre-compiled** release of these apps in a Ubuntu Docker image, visit https://hub.docker.com/r/aliraeini/porescale.
 
+## Download instructions
 
-----------------------------------------------------------------
+### Download all modules
 
-
-### Downloading all codes
-
-To **clone all modules at once**, which can be time-consuming to compile, run:
+To **clone all modules at once**, run:
 
 `git clone --recurse-submodules https://github.com/aliraeini/porescale.git`
 
+This can take about an hour to compile in serial builds.
 
-### Downloading specific modules
+----------------------------------------------------------------
 
-To pick only the submodules you need, first **clone this repository:**
+### Download specific modules and their dependencies
 
-`git clone https://github.com/aliraeini/porescale.git`
+To download only what you need, e.g. to **reproduce the standalone components above** but at different versions:
 
-and then **update the common modules:**
+* first **clone this repository:**
 
-`git submodule update --init  src/script src/include pkgs/zlib pkgs/libtiff src/libvoxel`
-
-Finally to get other codes run any combination of the following commands.
-
+  `git clone https://github.com/aliraeini/porescale.git`
 
 
-Pore-network model, **pnextract and pnflow:**
+* Then, update the **common modules:**
 
-`git submodule update --init  pkgs/hypre src/pnm`
-
-
-
-**Contact angle code:**
-
-`git submodule update --init  pkgs/foamx4m src/ContAngle`
+  `git submodule update --init  src/script src/include pkgs/zlib pkgs/libtiff src/libvoxel`
 
 
-
-**Porefoam two-phase** flow solver:
-
-`git submodule update --init  pkgs/foamx4m src/porefoam2f`
+Finally to get other codes run any combination of the following commands:
 
 
+* Pore-network model, **pnextract and pnflow:**
 
-**Porefoam single-phase** flow solver:
+  `git submodule update --init  pkgs/hypre src/pnm`
 
-`git submodule update --init  pkgs/foamx4m src/porefoam1f`
+* **Contact angle code:**
+
+  `git submodule update --init  pkgs/foamx4m src/ContAngle`
+
+
+* **Porefoam two-phase** flow solver:
+
+  `git submodule update --init  pkgs/foamx4m src/porefoam2f`
+
+* **Porefoam single-phase** flow solver:
+
+  `git submodule update --init  pkgs/foamx4m src/porefoam1f`
 
 
 ----------------------------------------------------------------
@@ -72,23 +69,30 @@ Pore-network model, **pnextract and pnflow:**
 ### Create from scratch
 
 Instead of running the git commands above, you can run the contents of
-[setup_from_scratch.sh](setup_from_scratch.sh), to generate this
+[setup_from_scratch.sh](setup_from_scratch.sh) to generate this
 repository from scratch.
 
 
 ----------------------------------------------------------------
 
-### Build and test
+## Build instructions
 
-Compilation requires gnu make, Cmake and a C++ compiler.  Compilation of Porefoam and ContactAngle codes additionally requires libscotch-dev and openmpi-dev, in Ubuntu Linux.
+Compilation requires: **GNU Make**, **CMake**, a **C++ compiler**.
+Compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and **`openmpi-dev`**, on Debian/Ubuntu Linux; see [build_test.yml](./.github/workflows/build_test.yml).
 
-Once you have the prerequisites installed, to compile the codes, run `make`, or `make -j` for parallel build.
+Once you have the prerequisites installed, run **`make`** to compile the codes, or **`make -j`** for a parallel build.
 
-To test the compilation run `make test`.
-
+To test for regressions, run **`make test`**. It depends on *Bash* and *Python3*.
 
 ----------------------------------------------------------------
 
-### Contact and References ###
+For a **pre-compiled** release of these apps in a Ubuntu Docker image,
+visit https://hub.docker.com/r/aliraeini/porescale.
 
-For contacts and references please see the individual modules README files or submit your issue in their Github repository.
+----------------------------------------------------------------
+
+## Contact and References
+
+For contact information and references, see the porescale [upstream repository](https://github.com/ImperialCollegeLondon/porescale), and the individual [modules](./src) README files.
+
+You can contact me via email at: a.q.raeini@gmail.com

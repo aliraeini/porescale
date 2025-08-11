@@ -1,6 +1,5 @@
+#!/bin/bash
 
-
-#ldconfig -p | grep libjpeg
 
 [ -d pkgs ] || ! echo "Bad working directory, pkgs/ folder does not exist" || exit
 
@@ -17,19 +16,18 @@ mkdir doc # these are temporary fix, docs should be saven in submodules instead
 (cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/pnflow/master/doc/pnflow_guide.pdf     )
 
 
-
 git init
-git submodule add         https://github.com/aliraeini/script.git                            src/script
-git submodule add         https://github.com/aliraeini/sirun.git                             src/include
-git submodule add         https://github.com/aliraeini/libtiff.git                           pkgs/libtiff
-git submodule add         https://github.com/aliraeini/zlib.git                              pkgs/zlib
-git submodule add         https://github.com/aliraeini/libvoxel.git                          src/libvoxel
-git submodule add         https://github.com/aliraeini/hypre.git                             pkgs/hypre
-git submodule add -b main https://github.com/ImperialCollegeLondon/pnflow.git                src/pnm
-git submodule add         https://github.com/aliraeini/foamxm.git                            pkgs/foamx4m
-git submodule add -b main https://github.com/ImperialCollegeLondon/poreFoam-singlePhase.git  src/porefoam1f
-git submodule add -b main https://github.com/ImperialCollegeLondon/porefoam.git              src/porefoam2f
-git submodule add -b main https://github.com/ImperialCollegeLondon/ContactAngle.git          src/ContAngle
+git submodule add         https://github.com/aliraeini/script.git                src/script
+git submodule add         https://github.com/aliraeini/sirun.git                 src/include
+git submodule add         https://github.com/aliraeini/libtiff.git               pkgs/libtiff
+git submodule add         https://github.com/aliraeini/zlib.git                  pkgs/zlib
+git submodule add         https://github.com/aliraeini/libvoxel.git              src/libvoxel
+git submodule add         https://github.com/aliraeini/hypre.git                 pkgs/hypre
+git submodule add -b main https://github.com/ImperialCollegeLondon/pnflow.git    src/pnm
+git submodule add         https://github.com/aliraeini/foamxm.git                pkgs/foamx4m
+git submodule add -b main https://github.com/aliraeini/porefoam1f.git            src/porefoam1f
+git submodule add -b main https://github.com/aliraeini/porefoam2f.git            src/porefoam2f
+git submodule add -b main https://github.com/aliraeini/ContactAngle.git          src/ContAngle
 
 
 make -j
