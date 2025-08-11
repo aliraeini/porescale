@@ -33,16 +33,16 @@
 	shallow = true
 [submodule "src/porefoam1f"]
 	path = src/porefoam1f
-	url = https://github.com/ImperialCollegeLondon/poreFoam-singlePhase.git
+	url = https://github.com/aliraeini/porefoam1f.git
 	branch = main
 	shallow = true
 [submodule "src/porefoam2f"]
 	path = src/porefoam2f
-	url = https://github.com/ImperialCollegeLondon/porefoam.git
+	url = https://github.com/aliraeini/porefoam2f.git
 	branch = main
 	shallow = true
 [submodule "src/ContAngle"]
 	path = src/ContAngle
-	url = https://github.com/ImperialCollegeLondon/ContactAngle.git
+	url = https://github.com/aliraeini/ContactAngle.git
 	branch = main
 	shallow = true
