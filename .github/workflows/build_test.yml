@@ -21,7 +21,8 @@ jobs:
       run: git submodule update --init  --depth 1 --recursive
 
     - name: Build all
-      run: make all -j2
+      run:
+        make all -j2 || make all
 
     - name: Run tests
       run: make test
