@@ -1,21 +1,15 @@
 ## Pore-scale modules
 
-This repository serves as a guide for updating
-**direct simulation**, **contact angle** calculation and **pore network modelling** software,
-originally developed at Imperial College
-[Pore-Scale Consortium](https://www.imperial.ac.uk/earth-science/research/research-groups/pore-scale-modelling/).
-
-It is **only a shell repository** for its git [submodules](./src/)
-
-
-> [!WARNING]
-> Diverged **upstream repository:  https://github.com/ImperialCollegeLondon/porescale**
->
-> **This repository**:
-> - lacks new submodules added to the [upstream](https://github.com/ImperialCollegeLondon/porescale/) since summer 2021,
-> - some [submodules](./src) link to forked repositories:
->     - new changes are mostly related to build and test scripts, and a few bug fixes.
-
+This is a shell repository to test the integration of codes I maintain:
+**[build scripts](https://github.com/aliraeini/script.git),**
+**[C++ utilities](https://github.com/aliraeini/sirun.git),**
+and **[libvoxel](https://github.com/aliraeini/libvoxel.git),**
+and [other dependencies](./pkgs/)
+with open-source software I worked on at Imperial College London:
+**[pore network modelling](https://github.com/aliraeini/porescale.git),**
+**[contact angle calculation](https://github.com/aliraeini/porescale.git)** and
+**[direct single-](https://github.com/aliraeini/porefoam1f.git)** and
+**[two-phase flow simulation](https://github.com/aliraeini/porefoam2f.git)**.
 
 ## Download instructions
 
@@ -23,46 +17,50 @@ It is **only a shell repository** for its git [submodules](./src/)
 
 To **clone all modules at once**, run:
 
-`git clone --recurse-submodules https://github.com/aliraeini/porescale.git`
+```bash
+git clone --recurse-submodules https://github.com/aliraeini/porescale.git
+```
 
-This can take about an hour to compile in serial builds.
+> A serial build of the downloaded code can take about an hour.
 
 ----------------------------------------------------------------
 
 ### Download specific modules and their dependencies
 
-To download only what you need, e.g. to **reproduce the standalone components above** but at different versions:
+First **clone this shell repository** and update the **common modules:**
 
-* first **clone this repository:**
+```bash
+git clone https://github.com/aliraeini/porescale.git
+git submodule update --init  src/script src/include pkgs/zlib pkgs/libtiff src/libvoxel
+```
 
-  `git clone https://github.com/aliraeini/porescale.git`
-
-
-* Then, update the **common modules:**
-
-  `git submodule update --init  src/script src/include pkgs/zlib pkgs/libtiff src/libvoxel`
-
-
-Finally to get other codes run any combination of the following commands:
+Then, run any combination of the following commands:
 
 
 * Pore-network model, **pnextract and pnflow:**
 
-  `git submodule update --init  pkgs/hypre src/pnm`
+```bash
+git submodule update --init  pkgs/hypre src/pnm
+```
 
 * **Contact angle code:**
 
-  `git submodule update --init  pkgs/foamx4m src/ContAngle`
+```bash
+git submodule update --init  pkgs/foamx4m src/ContAngle
+```
 
 
 * **Porefoam two-phase** flow solver:
 
-  `git submodule update --init  pkgs/foamx4m src/porefoam2f`
+```bash
+git submodule update --init  pkgs/foamx4m src/porefoam2f
+```
 
 * **Porefoam single-phase** flow solver:
 
-  `git submodule update --init  pkgs/foamx4m src/porefoam1f`
-
+```bash
+git submodule update --init  pkgs/foamx4m src/porefoam1f
+```
 
 ----------------------------------------------------------------
 
@@ -78,11 +76,18 @@ repository from scratch.
 ## Build instructions
 
 Compilation requires: **GNU Make**, **CMake**, a **C++ compiler**.
-Compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and **`openmpi-dev`**, on Debian/Ubuntu Linux; see [build_test.yml](./.github/workflows/build_test.yml).
+Compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and
+**`openmpi-dev`**, on Debian/Ubuntu Linux; see [build_test.yml](./.github/workflows/build_test.yml).
+Running the tests additionally depends on *Python3*.
 
-Once you have the prerequisites installed, run **`make`** to compile the codes, or **`make -j`** for a parallel build.
+Once you have the prerequisites run the following commands to build and test the compilation:
 
-To test for regressions, run **`make test`**. It depends on *Bash* and *Python3*.
+```bash
+make -j 4
+make test
+```
+
+> Change the `4` based on the number of processors on your computer.
 
 ----------------------------------------------------------------
 
@@ -93,6 +98,8 @@ visit https://hub.docker.com/r/aliraeini/porescale.
 
 ## Contact and References
 
-For contact information and references, see the porescale [upstream repository](https://github.com/ImperialCollegeLondon/porescale), and the individual [modules](./src) README files.
+For contact information and references, see README files in the
+[original repository](https://github.com/ImperialCollegeLondon/porescale),
+and in the linked [modules](./src).
 
 You can contact me via email at: a.q.raeini@gmail.com
