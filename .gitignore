@@ -1,9 +1,13 @@
 
+# User files
 .env
+log.*
 
+# Temporary files
 build/
-test/
+test_runs/
 
+# Binary packages
 bin/
 include/
 lib/

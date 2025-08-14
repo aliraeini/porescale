@@ -2,7 +2,7 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main", "testTests" ]
+    branches: [ "main", "test" ]
   pull_request:
     branches: [ "main" ]
 
@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-
     - name: Install prerequisites
       run: sudo apt-get update && sudo apt-get -y install mpi-default-dev flex libscotch-dev
 
+    - uses: actions/checkout@v3
+
     - name: Update submodules
-      run: git submodule update --init --recursive
+      run: git submodule update --init  --depth 1 --recursive
 
     - name: Build all
       run: make all -j2
