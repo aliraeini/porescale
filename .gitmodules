@@ -46,3 +46,9 @@
 	path = src/ContAngle
 	url = https://github.com/aliraeini/ContactAngle.git
 	branch = main
+[submodule "src/image3kit"]
+	path = src/image3kit
+	url = https://github.com/image3kit/image3kit.git
+[submodule "pkgs/pocketpy"]
+	path = pkgs/pocketpy
+	url = https://github.com/aliraeini/pocketpy.git
