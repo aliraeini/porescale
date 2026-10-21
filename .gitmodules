@@ -30,7 +30,7 @@
 	url = https://github.com/aliraeini/pnm.git
 	branch = main
 [submodule "pkgs/foamx4m"]
-	path = pkgs/foamx4m
+	path = pkgs/foamxm
 	url = https://github.com/aliraeini/foamxm.git
 	branch = main
 	shallow = true
