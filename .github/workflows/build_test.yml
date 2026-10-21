@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Install prerequisites
-      run: sudo apt-get update && sudo apt-get -y install mpi-default-dev flex libscotch-dev
+      run: sudo apt-get update && sudo apt-get -y install mpi-default-dev flex libscotch-dev zlib1g-dev libtiff-dev libjpeg-dev liblzma-dev python3-pip
 
     - uses: actions/checkout@v3
 
@@ -23,6 +23,9 @@ jobs:
     - name: Build all
       run:
         make all -j2 || make all
+
+    - name: Install the Python packages needed by some tests
+      run: pip install ./src/image3kit git+https://github.com/difizix/pnmkit.git
 
     - name: Run tests
       run: make test

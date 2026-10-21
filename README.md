@@ -31,7 +31,7 @@ First **clone this shell repository** and update the **common modules:**
 
 ```bash
 git clone https://github.com/aliraeini/porescale.git
-git submodule update --init  src/script src/include pkgs/zlib pkgs/libtiff src/libvoxel
+git submodule update --init  src/script src/include src/libvoxel
 ```
 
 Then, run any combination of the following commands:
@@ -46,20 +46,20 @@ git submodule update --init  pkgs/hypre src/pnm
 * **Contact angle code:**
 
 ```bash
-git submodule update --init  pkgs/foamx4m src/ContAngle
+git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/ContAngle
 ```
 
 
 * **Porefoam two-phase** flow solver:
 
 ```bash
-git submodule update --init  pkgs/foamx4m src/porefoam2f
+git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/porefoam2f
 ```
 
 * **Porefoam single-phase** flow solver:
 
 ```bash
-git submodule update --init  pkgs/foamx4m src/porefoam1f
+git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/porefoam1f
 ```
 
 ----------------------------------------------------------------
@@ -76,9 +76,24 @@ repository from scratch.
 ## Build instructions
 
 Compilation requires: **GNU Make**, **CMake**, a **C++ compiler**.
-Compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and
-**`openmpi-dev`**, on Debian/Ubuntu Linux; see [build_test.yml](./.github/workflows/build_test.yml).
-Running the tests additionally depends on *Python3*.
+The codes also need the **zlib** and **libtiff** development files, and
+compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and
+**`openmpi-dev`**, on Debian/Ubuntu Linux:
+
+```bash
+sudo apt install zlib1g-dev libtiff-dev libjpeg-dev liblzma-dev mpi-default-dev flex libscotch-dev
+```
+
+see [build_test.yml](./.github/workflows/build_test.yml).
+Running the tests additionally depends on *Python3*, and the ContactAngle test on the Python packages
+`pnmkit` and `image3kit`:
+
+```bash
+pip install ./src/image3kit git+https://github.com/difizix/pnmkit.git
+```
+
+Everything is built and installed inside this folder; optional settings (e.g. other folders for
+the build) can be put in a `.env` file, see [.env.example](.env.example).
 
 Once you have the prerequisites run the following commands to build and test the compilation:
 

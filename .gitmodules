@@ -6,16 +6,6 @@
 	path = src/include
 	url = https://github.com/aliraeini/sirun.git
 	branch = main
-[submodule "pkgs/libtiff"]
-	path = pkgs/libtiff
-	url = https://github.com/aliraeini/libtiff.git
-	branch = main
-	shallow = true
-[submodule "pkgs/zlib"]
-	path = pkgs/zlib
-	url = https://github.com/aliraeini/zlib.git
-	branch = master
-	shallow = true
 [submodule "src/libvoxel"]
 	path = src/libvoxel
 	url = https://github.com/aliraeini/libvoxel.git
@@ -29,7 +19,7 @@
 	path = src/pnm
 	url = https://github.com/aliraeini/pnm.git
 	branch = main
-[submodule "pkgs/foamx4m"]
+[submodule "pkgs/foamxm"]
 	path = pkgs/foamxm
 	url = https://github.com/aliraeini/foamxm.git
 	branch = main
@@ -48,7 +38,7 @@
 	branch = main
 [submodule "src/image3kit"]
 	path = src/image3kit
-	url = https://github.com/image3kit/image3kit.git
+	url = https://github.com/difizix/image3kit.git
 [submodule "pkgs/pocketpy"]
 	path = pkgs/pocketpy
 	url = https://github.com/aliraeini/pocketpy.git
