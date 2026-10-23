@@ -2,8 +2,7 @@
 
 This is a shell repository to test the integration of codes I maintain:
 **[build scripts](https://github.com/aliraeini/script.git),**
-**[C++ utilities](https://github.com/aliraeini/sirun.git),**
-and **[libvoxel](https://github.com/aliraeini/libvoxel.git),**
+and **[image3kit](https://github.com/difizix/image3kit.git)** (voxel images and C++ utilities),
 and [other dependencies](./pkgs/)
 with open-source software I worked on at Imperial College London:
 **[pore network modelling](https://github.com/aliraeini/porescale.git),**
@@ -31,7 +30,7 @@ First **clone this shell repository** and update the **common modules:**
 
 ```bash
 git clone https://github.com/aliraeini/porescale.git
-git submodule update --init  src/script src/include src/libvoxel
+git submodule update --init  src/script src/image3kit
 ```
 
 Then, run any combination of the following commands:
