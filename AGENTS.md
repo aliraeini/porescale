@@ -3,7 +3,7 @@ The repo is made of several git submodules, see the README.md files of individua
 ## Overview
 * `src/script`: build and test scripts (`Makefile.msRoot`, `Makefile.in`, `makefile.3rd` for `pkgs`, `bashrc`, `runTest`).
 * `src/pnm` (pnextract, pnflow), `src/porefoam1f` (single-phase flow), `src/porefoam2f` (two-phase flow), `src/ContAngle` (contact angle and curvature).
-* `src/image3kit` (voxel image library and tools, newer), `src/libvoxel` and `src/include` (older voxel library and C++ utilities, used by pnm).
+* `src/image3kit` (voxel image library, C++ utilities in `common/` and tools; used by all modules). The former `src/libvoxel` and `src/include` were retired on 2026-10-23; the `VxlPro` keyword of pnextract is now `VxlPy`.
 * thirdparty: `pkgs/`: `foamxm` (minified OpenFOAM), `hypre`, `pocketpy`. zlib and libtiff come from the system.
 
 ## Build and test

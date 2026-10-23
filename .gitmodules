@@ -2,14 +2,6 @@
 	path = src/script
 	url = https://github.com/aliraeini/script.git
 	branch = main
-[submodule "src/include"]
-	path = src/include
-	url = https://github.com/aliraeini/sirun.git
-	branch = main
-[submodule "src/libvoxel"]
-	path = src/libvoxel
-	url = https://github.com/aliraeini/libvoxel.git
-	branch = main
 [submodule "pkgs/hypre"]
 	path = pkgs/hypre
 	url = https://github.com/aliraeini/hypre.git
