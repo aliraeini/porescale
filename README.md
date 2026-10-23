@@ -86,10 +86,10 @@ sudo apt install zlib1g-dev libtiff-dev libjpeg-dev liblzma-dev mpi-default-dev 
 
 see [build_test.yml](./.github/workflows/build_test.yml).
 Running the tests additionally depends on *Python3*, and the ContactAngle test on the Python packages
-`pnmkit` and `image3kit`:
+`pytest`, `pnmkit` and `image3kit` (ContactAngle and pnm tests):
 
 ```bash
-pip install ./src/image3kit git+https://github.com/difizix/pnmkit.git
+pip install pytest ./src/image3kit git+https://github.com/difizix/pnmkit.git
 ```
 
 Everything is built and installed inside this folder; optional settings (e.g. other folders for
