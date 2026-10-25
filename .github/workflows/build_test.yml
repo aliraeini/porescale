@@ -25,7 +25,7 @@ jobs:
         make all -j2 || make all
 
     - name: Install the Python packages needed by some tests
-      run: pip install pytest ./src/image3kit git+https://github.com/difizix/pnmkit.git
+      run: pip install pytest ./image3kit git+https://github.com/difizix/pnmkit.git
 
     - name: Run tests
       run: make test

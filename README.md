@@ -30,7 +30,7 @@ First **clone this shell repository** and update the **common modules:**
 
 ```bash
 git clone https://github.com/aliraeini/porescale.git
-git submodule update --init  src/script src/image3kit
+git submodule update --init  script image3kit
 ```
 
 Then, run any combination of the following commands:
@@ -39,26 +39,26 @@ Then, run any combination of the following commands:
 * Pore-network model, **pnextract and pnflow:**
 
 ```bash
-git submodule update --init  pkgs/hypre src/pnm
+git submodule update --init  pkgs/hypre pnm
 ```
 
 * **Contact angle code:**
 
 ```bash
-git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/ContAngle
+git submodule update --init  pkgs/foamxm pkgs/pocketpy image3kit ContAngle
 ```
 
 
 * **Porefoam two-phase** flow solver:
 
 ```bash
-git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/porefoam2f
+git submodule update --init  pkgs/foamxm pkgs/pocketpy image3kit porefoam2f
 ```
 
 * **Porefoam single-phase** flow solver:
 
 ```bash
-git submodule update --init  pkgs/foamxm pkgs/pocketpy src/image3kit src/porefoam1f
+git submodule update --init  pkgs/foamxm pkgs/pocketpy image3kit porefoam1f
 ```
 
 ----------------------------------------------------------------
@@ -88,7 +88,7 @@ Running the tests additionally depends on *Python3*, and the ContactAngle test o
 `pytest`, `pnmkit` and `image3kit` (ContactAngle and pnm tests):
 
 ```bash
-pip install pytest ./src/image3kit git+https://github.com/difizix/pnmkit.git
+pip install pytest ./image3kit git+https://github.com/difizix/pnmkit.git
 ```
 
 Everything is built and installed inside this folder; optional settings (e.g. other folders for
@@ -114,6 +114,6 @@ visit https://hub.docker.com/r/aliraeini/porescale.
 
 For contact information and references, see README files in the
 [original repository](https://github.com/ImperialCollegeLondon/porescale),
-and in the linked [modules](./src).
+and in the linked [modules](.).
 
 You can contact me via email at: a.q.raeini@gmail.com

@@ -1,5 +1,5 @@
-[submodule "src/script"]
-	path = src/script
+[submodule "script"]
+	path = script
 	url = https://github.com/aliraeini/script.git
 	branch = main
 [submodule "pkgs/hypre"]
@@ -7,8 +7,8 @@
 	url = https://github.com/aliraeini/hypre.git
 	branch = master
 	shallow = true
-[submodule "src/pnm"]
-	path = src/pnm
+[submodule "pnm"]
+	path = pnm
 	url = https://github.com/aliraeini/pnm.git
 	branch = main
 [submodule "pkgs/foamxm"]
@@ -16,20 +16,20 @@
 	url = https://github.com/aliraeini/foamxm.git
 	branch = main
 	shallow = true
-[submodule "src/porefoam1f"]
-	path = src/porefoam1f
+[submodule "porefoam1f"]
+	path = porefoam1f
 	url = https://github.com/aliraeini/porefoam1f.git
 	branch = main
-[submodule "src/porefoam2f"]
-	path = src/porefoam2f
+[submodule "porefoam2f"]
+	path = porefoam2f
 	url = https://github.com/aliraeini/porefoam2f.git
 	branch = main
-[submodule "src/ContAngle"]
-	path = src/ContAngle
+[submodule "ContAngle"]
+	path = ContAngle
 	url = https://github.com/aliraeini/ContactAngle.git
 	branch = main
-[submodule "src/image3kit"]
-	path = src/image3kit
+[submodule "image3kit"]
+	path = image3kit
 	url = https://github.com/difizix/image3kit.git
 [submodule "pkgs/pocketpy"]
 	path = pkgs/pocketpy
