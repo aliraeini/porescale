@@ -1,1 +1,1 @@
-include src/script/Makefile.msRoot
+include script/Makefile.msRoot
