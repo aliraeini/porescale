@@ -7,7 +7,10 @@ log.*
 build/
 test_runs/
 
-# Binary packages
+# Installed files (default MS_INST)
+inst/
+
+# Binary packages (old default MS_INST)
 bin/
 include/
 lib/
