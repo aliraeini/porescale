@@ -7,13 +7,6 @@ rm -rf .git .gitmodules */
 
 echo include script/Makefile.msRoot > Makefile
 
-mkdir doc # these are temporary fix, docs should be saven in submodules instead
-(cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/pnflow/master/doc/Image.mhd            )
-(cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/pnflow/master/doc/input_pnflow.dat     )
-(cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/poreFoam-singlePhase/master/doc/nomenclature.md )
-(cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/pnflow/master/doc/pnextract_guide.pdf  )
-(cd doc && wget https://raw.githubusercontent.com/ImperialCollegeLondon/pnflow/master/doc/pnflow_guide.pdf     )
-
 
 git init
 git submodule add         https://github.com/aliraeini/script.git                script
