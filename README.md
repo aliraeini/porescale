@@ -6,7 +6,7 @@ and **[image3kit](https://github.com/difizix/image3kit.git)** (voxel images and 
 and [other dependencies](./pkgs/)
 with open-source software I worked on at Imperial College London:
 **[pore network modelling](https://github.com/aliraeini/porescale.git),**
-**[contact angle calculation](https://github.com/aliraeini/porescale.git)** and
+**[contact angle calculation](https://github.com/aliraeini/vxlSrfCA.git)** and
 **[direct single-](https://github.com/aliraeini/porefoam1f.git)** and
 **[two-phase flow simulation](https://github.com/aliraeini/porefoam2f.git)**.
 
@@ -42,10 +42,10 @@ Then, run any combination of the following commands:
 git submodule update --init  pkgs/hypre pnm
 ```
 
-* **Contact angle code:**
+* **Contact angle code (vxlSrfCA):**
 
 ```bash
-git submodule update --init  pkgs/foamxm pkgs/pocketpy image3kit ContAngle
+git submodule update --init  image3kit vxlSrfCA
 ```
 
 
@@ -76,7 +76,7 @@ repository from scratch.
 
 Compilation requires: **GNU Make**, **CMake**, a **C++ compiler**.
 The codes also need the **zlib** and **libtiff** development files, and
-compilation of Porefoam and ContactAngle codes also requires **`libscotch-dev`** and
+compilation of the Porefoam codes also requires **`libscotch-dev`** and
 **`openmpi-dev`**, on Debian/Ubuntu Linux:
 
 ```bash
@@ -84,8 +84,8 @@ sudo apt install zlib1g-dev libtiff-dev libjpeg-dev liblzma-dev mpi-default-dev 
 ```
 
 see [build_test.yml](./.github/workflows/build_test.yml).
-Running the tests additionally depends on *Python3*, and the ContactAngle test on the Python packages
-`pytest`, `pnmkit` and `image3kit` (ContactAngle and pnm tests):
+Running the tests additionally depends on *Python3*, and the `vxlSrfCA` and `pnm` tests on the Python packages
+`pytest`, `numpy`, `pnmkit` and `image3kit`:
 
 ```bash
 pip install pytest ./image3kit git+https://github.com/difizix/pnmkit.git
