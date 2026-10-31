@@ -9,15 +9,15 @@ echo include script/Makefile.msRoot > Makefile
 
 
 git init
-git submodule add         https://github.com/aliraeini/script.git                script
-git submodule add         https://github.com/aliraeini/hypre.git                 pkgs/hypre
-git submodule add -b main https://github.com/aliraeini/pnm.git                   pnm
-git submodule add         https://github.com/aliraeini/foamxm.git                pkgs/foamxm
-git submodule add         https://github.com/aliraeini/pocketpy.git              pkgs/pocketpy
-git submodule add -b main https://github.com/difizix/image3kit.git               image3kit
-git submodule add -b main https://github.com/aliraeini/porefoam1f.git            porefoam1f
-git submodule add -b main https://github.com/aliraeini/porefoam2f.git            porefoam2f
-git submodule add -b main https://github.com/aliraeini/ContactAngle.git          ContAngle
+git submodule add         https://github.com/aliraeini/script.git       script
+git submodule add         https://github.com/aliraeini/hypre.git        pkgs/hypre
+git submodule add -b main https://github.com/aliraeini/pnm.git          pnm
+git submodule add         https://github.com/aliraeini/foamxm.git       pkgs/foamxm
+git submodule add         https://github.com/aliraeini/pocketpy.git     pkgs/pocketpy
+git submodule add -b main https://github.com/DigiPorFlow/image3kit.git  image3kit
+git submodule add -b main https://github.com/aliraeini/porefoam1f.git   porefoam1f
+git submodule add -b main https://github.com/aliraeini/porefoam2f.git   porefoam2f
+git submodule add -b main https://github.com/aliraeini/vxlSrfCA.git     vxlSrfCA
 
 
 make -j

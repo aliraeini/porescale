@@ -24,13 +24,12 @@
 	path = porefoam2f
 	url = https://github.com/aliraeini/porefoam2f.git
 	branch = main
-[submodule "ContAngle"]
-	path = ContAngle
-	url = https://github.com/aliraeini/ContactAngle.git
-	branch = main
 [submodule "image3kit"]
 	path = image3kit
 	url = https://github.com/difizix/image3kit.git
 [submodule "pkgs/pocketpy"]
 	path = pkgs/pocketpy
 	url = https://github.com/aliraeini/pocketpy.git
+[submodule "vxlSrfCA"]
+	path = vxlSrfCA
+	url = https://github.com/aliraeini/vxlSrfCA.git

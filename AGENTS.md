@@ -2,7 +2,7 @@ The repo is made of several git submodules, see the README.md files of individua
 
 ## Overview
 * `script`: build and test scripts (`Makefile.msRoot`, `Makefile.in`, `makefile.3rd` for `pkgs`, `bashrc`, `runTest`).
-* `pnm` (pnextract, pnflow), `porefoam1f` (single-phase flow), `porefoam2f` (two-phase flow), `ContAngle` (contact angle and curvature).
+* `pnm` (pnextract, pnflow), `porefoam1f` (single-phase flow), `porefoam2f` (two-phase flow), `vxlSrfCA` (contact angle and curvature).
 * `image3kit` (voxel image library, C++ utilities in `common/` and tools; used by all modules). The former `src/libvoxel` and `src/include` were retired on 2026-10-23; the `VxlPro` keyword of pnextract is now `VxlPy`.
 * thirdparty: `pkgs/`: `foamxm` (minified OpenFOAM), `hypre`, `pocketpy`. zlib and libtiff come from the system.
 
@@ -11,7 +11,7 @@ The repo is made of several git submodules, see the README.md files of individua
 * `make -j4` builds everything inside this folder (installed files in `inst/{bin,lib,include}`, temporary files in `build/<tree>/`, tests in `test_runs/`). Defaults work; optional settings go to `.env` (see `.env.example`;
   folders outside this repo, e.g. shared with another repo, need `MS_ALLOW_OUTSIDE=1`).
 * `make test` runs the tests of all modules in `$MS_TEST_DIR` (default `test_runs/`) and fails only on non-zero exit codes; suspicious messages in the logs are printed in red.
-  The ContAngle and pnm (`pnm/tests`, pytest) tests need `pip install pytest ./image3kit git+https://github.com/difizix/pnmkit.git`.
+  The vxlSrfCA and pnm (`pnm/tests`, pytest) tests need `pip install pytest ./image3kit git+https://github.com/difizix/pnmkit.git`.
 * `make clean` / `make distclean`. `makefile.3rd` builds a package in `pkgs` only if its library is not installed yet: to rebuild after a change
   delete the installed library in `inst/lib/` (hypre: `inst/hypreSeq/`) and its folder in `build/pkgs/`.
 * Do not put output files in the source folders; everything generated stays in `inst/`, `build/`, `test_runs/`.
